@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro de Notas</title>
+    <style>
+        * {
+            font-family: Arial, sans-serif;
+            box-sizing: border-box;
+        }
+        body {
+            background-color: #2c3e50;
+            color: white;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+        .container {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+            width: 300px;
+        }
+        input, button {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border-radius: 5px;
+            border: none;
+            font-size: 16px;
+        }
+        input {
+            background: #34495e;
+            color: white;
+        }
+        button {
+            background: #1abc9c;
+            color: white;
+            cursor: pointer;
+        }
+        button:hover {
+            background: #16a085;
+        }
+        #pantalla {
+            margin-top: 20px;
+            padding: 10px;
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 5px;
+            width: 300px;
+            text-align: left;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Registro de Alumnos</h2>
+        <label for="nombre">Nombre</label>
+        <input type="text" id="nombre" placeholder="Ingrese el nombre" required>
+        <label for="nota">Nota (0-20)</label>
+        <input type="number" id="nota" placeholder="Ingrese la nota" min="0" max="20" required>
+        <button onclick="agregarAlumno()">Registrar</button>
+        <button onclick="mostrarAlumnos()">Ver Reporte</button>
+    </div>
+    <div id="pantalla"></div>
+    <script>
+        let alumnos = [];
+        
+        function agregarAlumno() {
+            let nombre = document.getElementById("nombre").value.trim();
+            let nota = parseFloat(document.getElementById("nota").value);
+            
+            if (!nombre) {
+                alert("Por favor, ingrese un nombre válido.");
+                return;
+            }
+            
+            if (isNaN(nota) || nota < 0 || nota > 20) {
+                alert("Por favor, ingrese una nota válida entre 0 y 20.");
+                return;
+            }
+            
+            let alumno = { nombre, nota };
+            alumnos.push(alumno);
+            document.getElementById("nombre").value = "";
+            document.getElementById("nota").value = "";
+            alert("Alumno registrado correctamente.");
+        }
+        
+        function mostrarAlumnos() {
+            alumnos.sort((a, b) => b.nota - a.nota);
+            let texto = "<h3>Reporte de Alumnos</h3>";
+            
+            alumnos.forEach(alumno => {
+                texto += `<p>${alumno.nombre} - Nota: ${alumno.nota}</p>`;
+            });
+            
+            document.getElementById("pantalla").innerHTML = texto;
+        }
+    </script>
+</body>
+</html>

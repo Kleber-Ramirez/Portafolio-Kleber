@@ -1,0 +1,280 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+html, body {
+    height: 100%;
+    min-height: 100vh;
+    overflow-x: hidden; /* Evita scroll horizontal innecesario */
+    background-color: #0a4a78;
+}
+
+
+/* Estilos generales */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    background-color: #0a4a78; /* Asegurar el fondo azul */
+}
+
+/* Estilos del header */
+header {
+    background-color: #00598C;
+    color: white;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 15px;
+}
+
+nav a {
+    text-decoration: none;
+    color: white;
+    background-color: orange;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+/* 🟢 Botón de menú hamburguesa (se oculta en escritorio) */
+.menu-toggle {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+}
+
+.menu-toggle div {
+    width: 30px;
+    height: 4px;
+    background-color: white;
+    margin: 5px;
+    transition: all 0.3s ease;
+}
+
+/* Hero Section */
+.hero {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 70px;
+    background-color: #0b0b45;
+    color: white;
+}
+
+/* Contenedor del Hero */
+.hero-content {
+    display: flex;
+    align-items: center;
+    gap: 80px;
+}
+
+/* Animaciones */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.hero-img {
+    width: 500px;
+    height: auto;
+    border-radius: 50px;
+    margin-left: 80px;
+    animation: fadeIn 1.5s ease-in-out;
+}
+
+.hero-text h1 {
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin-left: 80px;
+    animation: fadeIn 2s ease-in-out;
+}
+
+/* Botón de Contacto */
+.btn-contacto {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: orange;
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+    border-radius: 5px;
+    transition: background 0.3s;
+    margin-left: 80px;
+}
+
+.btn-contacto:hover {
+    background-color: darkorange;
+}
+
+/* Animación para los botones */
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+    100% { transform: scale(1); }
+}
+
+/* Estilos para los botones de 'Ver más' */
+.btn-vermas {
+    background-color: orange;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    color: white;
+    font-size: 14px;
+    transition: background 0.3s, transform 0.3s;
+}
+
+/* Efecto hover con la animación */
+.btn-vermas:hover {
+    background-color: darkorange;
+    animation: pulse 0.5s ease-in-out;
+}
+
+/* Sección de proyectos */
+.projects {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    padding: 50px;
+    background-color: #0a4a78;
+}
+
+.project {
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    width: 320px;
+    margin: 10px;
+}
+
+.project img {
+    width: 100%;
+    border-radius: 10px;
+    
+}.projects {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px; /* Espaciado uniforme entre elementos */
+    padding: 50px;
+    background-color: #0a4a78;
+}
+
+.project {
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    width: 320px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* Distribuye el contenido equitativamente */
+    align-items: center;
+    height: 100%; /* Asegura que todas las tarjetas tengan la misma altura */
+    min-height: 300px; /* Ajusta esto según el contenido */
+}
+
+.project img {
+    width: 100%;
+    border-radius: 10px;
+    object-fit: cover;
+    height: 180px; /* Tamaño uniforme de las imágenes */
+}
+
+.btn-vermas {
+    background-color: orange;
+    color: white;
+    text-decoration: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    margin-top: auto; /* Empuja el botón al final */
+}
+
+
+/* Ajustar el header para móviles */
+@media (max-width: 768px) {
+    header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 10px 20px;
+    }
+
+    .logo {
+        font-size: 18px;
+        font-weight: bold;
+        text-align: left;
+        flex: 1;
+    }
+
+    .menu-toggle {
+        display: flex;
+        cursor: pointer;
+        padding: 10px;
+    }
+
+    /* Ajustar el menú desplegable */
+    nav ul {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 60px;
+        right: 10px;
+        background-color: orange;
+        width: 200px;
+        border-radius: 5px;
+        text-align: center;
+        padding: 10px;
+    }
+
+
+    nav ul.active {
+        display: flex;
+    }
+    .hero {
+        flex-direction: column;
+        padding: 20px;
+        text-align: center;
+    }
+
+    .hero-content {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .hero-img {
+        width: 80%;
+        margin: 0 auto;
+    }
+
+    .hero-text h1,
+    .btn-contacto {
+        margin-left: 0;
+    }
+
+    /* Asegurar que las imágenes de los proyectos se adapten bien */
+    .proyecto img {
+        max-width: 100%;
+        height: auto;
+        display: block;
+        margin: 0 auto;
+    }
+}
+
+

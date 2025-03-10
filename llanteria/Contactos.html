@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contactanos</title>
+    <link rel="stylesheet" href="contactos.css">
+    <script src="https://kit.fontawesome.com/b408879b64.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    
+    
+    <div class="map">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3902.4402297706233!2d-77.05290049538144!3d-12.01318441434615!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9105cf1c2e8d1ec5%3A0xf78d356e7daae717!2sCa.%20San%20Juan%20Bautista%20103%2C%20Lima%2015102!5e0!3m2!1ses-419!2spe!4v1705614563292!5m2!1ses-419!2spe" width="600" height="450" style="border:0;" allowfullscreen=""></iframe>
+    </div>
+    <form id="miFormulario" action="http://localhost/web/procesar_formulario.php" method="post">
+        <h1>CONTÁCTANOS</h1>
+        <div class="input-box">
+            <input type="text" name="nombre_apellido" placeholder="Nombre y apellido" required>
+            <i class="fa-solid fa-user"></i>
+        </div>  
+        <div class="input-box">
+            <input type="email" name="correo" placeholder="Correo electrónico">
+            <i class="fa-solid fa-envelope"></i>
+        </div>
+        <div class="input-box">
+            <input type="number" name="telefono" placeholder="Teléfono" oninput="this.value = this.value.replace(/[^0-9]/g, '').slice(0, 9)" required >
+            <i class="fa-solid fa-phone"></i>
+        </div>
+        <div class="input-box">
+            <input type="text" name="asunto" placeholder="Asunto" required>
+            <i class="fa-solid fa-pen-to-square"></i>
+        </div>
+        <div class="input-box">
+            <textarea name="mensaje" placeholder="Escribe tu mensaje..." required></textarea>
+        </div>
+        <button type="submit">Enviar mensaje</button>
+    </form>   
+    <script>
+        document.getElementById('miFormulario').addEventListener('submit', function (event) {
+        event.preventDefault(); // Evita la recarga de la página por defecto
+        enviarFormulario();
+        });
+        function enviarFormulario() {
+            var formulario = document.getElementById('miFormulario');
+            var datos = new FormData(formulario);
+        
+            var xhr = new XMLHttpRequest();
+            xhr.open('POST', 'http://localhost/llanteriagallitoweb/procesar_formulario.php', true);
+        
+            xhr.onreadystatechange = function () {
+                if (xhr.readyState == 4) { // Comprueba si la solicitud se ha completado
+                    if (xhr.status == 200) { // Comprueba si la respuesta fue exitosa
+                        alert('Enviado con éxito');
+                        formulario.reset(); // Restablece los campos del formulario
+                    } else {
+                        alert('Error al enviar los datos. Código de estado: ' + xhr.status);
+                    }
+                }
+            };
+        
+            xhr.onerror = function () {
+                alert('Error al enviar la solicitud AJAX');
+            };
+        
+            xhr.send(datos);
+        }
+    </script>    
+</body>
+</html>

@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carta</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Arial', sans-serif;
+            background-color: #F9F6F0;
+        }
+
+        header {
+            background-color: #D2B48C;
+            padding: 20px;
+            text-align: center;
+        }
+
+        h1 {
+            color: #8B4513;
+            font-size: 36px;
+            margin-bottom: 0;
+        }
+
+        nav ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            background-color: #D2B48C;
+            text-align: center;
+        }
+
+        nav li {
+            display: inline-block;
+            margin-right: 40px;
+        }
+
+        nav li a {
+            display: block;
+            color: #8B4513;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        nav li a:hover {
+            background-color: #8B4513;
+            color: #F5DEB3;
+        }
+
+        main {
+            padding: 20px;
+            text-align: center;
+        }
+
+        img {
+            width: 100%;
+            max-width: 250px;
+            height: auto;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            margin-right: 20px;
+        }
+
+        button {
+            background-color: #138b19;
+            color: #F5DEB3;
+            padding: 14px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        button:hover {
+            background-color: #F5DEB3;
+            color: #8B4513;
+        }
+
+        footer {
+            background-color: #D2B48C;
+            padding: 20px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Restaurante de Comida Criolla</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="carta.html">Carta</a></li>
+                <li><a href="reservas.html">Reserva</a></li>
+                <li><a href="delivery.html">Delivery</a></li>
+                <li><a href="nosotros.html">Nosotros</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <main>
+        <h2>Bienvenido al Restaurante de Comida Criolla</h2>
+        
+        <!-- Envolviendo la imagen en un enlace -->
+        <a href="costa.html">
+            <img src="imagen/rcosta.jfif" alt="Imagen 1" style="width: 390; height: 210px;">
+        </a>
+        
+        <!-- Envolviendo la imagen en un enlace -->
+        <a href="sierra.html">
+            <img src="imagen/rsierra.jfif" alt="Imagen 2" style="width: 390; height: 210px;">
+        </a>
+        
+        <!-- Envolviendo la imagen en un enlace -->
+        <a href="selva.html">
+            <img src="imagen/rselva.jpg" alt="Imagen 3" style="width: 250px; height: 210px;">
+        </a>
+
+        <p>¡Disfruta de los mejores platos de la gastronomía peruana en nuestro restaurante!</p>
+        <p>Ofrecemos una amplia variedad de platos de la costa, sierra y selva del Perú.</p>
+        <p>¡Ven a visitarnos hoy mismo!</p>
+        <button onclick="window.location.href='reservas.html'">Reservar Ahora</button>
+    </main>
+    <footer>
+        <p>Restaurante de Comida Criolla</p>
+    </footer>
+</body>
+</html>

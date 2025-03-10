@@ -83,4 +83,108 @@ nav a {
     cursor: pointer;
     color: #f4f4f4;
     font-weight: bold;
+    
+}
+
+/* 🟢 Botón de menú hamburguesa (se oculta en escritorio) */
+.menu-toggle {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+}
+
+.menu-toggle div {
+    width: 30px;
+    height: 4px;
+    background-color: white;
+    margin: 5px;
+    transition: all 0.3s ease;
+}
+
+@media (max-width: 768px) {
+    /* Ocultar menú y mostrar toggle */
+    header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 10px 20px;
+    }
+
+    .logo {
+        font-size: 18px;
+        font-weight: bold;
+        text-align: left;
+        flex: 1;
+    }
+
+    .menu-toggle {
+        display: flex;
+        cursor: pointer;
+        padding: 10px;
+    }
+
+
+    nav ul {
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        top: 60px;
+        right: 10px;
+        background-color: orange;
+        width: 200px;
+        border-radius: 5px;
+        text-align: center;
+        padding: 10px;
+        opacity: 0;
+        transform: translateY(-10px);
+        transition: opacity 0.3s ease, transform 0.3s ease, right 0.3s ease-in-out;
+    }
+
+    nav ul.active {
+        display: flex;
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+    .menu-toggle {
+        display: flex;
+        position: relative;
+        z-index: 1000;
+    }
+    .contacto {
+        flex-direction: column;
+        padding: 20px;
+        text-align: center;
+    }
+
+    .info-contacto {
+        max-width: 100%;
+        text-align: center;
+        margin-bottom: 20px;
+    }
+    .redes {
+        display: flex;
+        justify-content: center; /* Centra horizontalmente */
+        align-items: center; /* Alinea verticalmente */
+        gap: 15px; /* Espacio entre los iconos */
+        margin-top: 10px;
+    }
+    
+
+    .formulario {
+        width: 90%;
+        padding: 15px 23px;
+    }
+
+    .formulario input, 
+    .formulario textarea {
+        font-size: 14px;
+        padding: 7px;
+        margin-bottom: 9px;
+    }
+
+    .formulario button {
+        font-size: 16px;
+        padding: 9px;
+    }
 }

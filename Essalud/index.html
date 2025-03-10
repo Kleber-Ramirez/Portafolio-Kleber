@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Control de Salud</title>
+    <link rel="stylesheet" href="./trabajo.css">
+</head>
+<body>
+    <article class="art-1">
+        <img src="./assets/essalud.png" alt="Logo ESSALUD">
+        <h1>Bienvenido a ESSALUD</h1>
+        <p>Tu salud es lo más importante</p>
+        <h2>Elija una de las opciones:</h2>
+    </article>
+    <article class="art-2">
+        <section class="cuadro">
+            <img onclick="calculandoImc()" src="./assets/indice_de _masa.png" alt="Masa corporal">
+        </section>
+        <section class="cuadro">
+            <img onclick="calcularRitmoCardiaco()" src="./assets/ritmo cardiaco.png" alt="Ritmo cardiaco">
+        </section>
+        <section class="cuadro">
+            <img onclick="calcularTemperatura()" src="./assets/temperatura.png" alt="Temperatura">
+        </section>
+    </article>
+    <script src="./trabajo.js"></script>
+</body>
+</html>

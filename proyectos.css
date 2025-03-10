@@ -3,12 +3,24 @@ body {
     margin: 0;
     padding: 0;
     
+    
+}
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+html, body {
+    height: 100%;
+    min-height: 100vh;
+    overflow-x: hidden; /* Evita scroll horizontal innecesario */
+    background-color: #0a4a78;
 }
 
 header {
     background-color: #00598C;
     color: white;
-    padding: 05px;
+    padding: 20px;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -41,10 +53,11 @@ button {
 .projects-container {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 70px;
+    gap: 40px; /* Reducí el espacio para mejor ajuste */
     padding: 50px;
     background-color: #0a4a78;
     justify-items: center;
+    align-items: start;
 }
 
 .project {
@@ -52,7 +65,10 @@ button {
     padding: 20px;
     border-radius: 10px;
     text-align: center;
-    width: 250px;
+    width: 320px;
+    min-height: 300px; /* Altura mínima para evitar cortes */
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    height: 100%; /* Hace que todas las tarjetas tengan la misma altura */
 }
 
 .project img {
@@ -60,3 +76,93 @@ button {
     border-radius: 10px;
 }
 
+.btn-vermas {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 8px 15px;
+    background-color: orange;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.btn-vermas:hover {
+    background-color: darkorange;
+}
+
+/* 🟢 Botón de menú hamburguesa (se oculta en escritorio) */
+.menu-toggle {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+}
+
+.menu-toggle div {
+    width: 30px;
+    height: 4px;
+    background-color: white;
+    margin: 5px;
+    transition: all 0.3s ease;
+}
+
+/* Responsive para tablets y móviles */
+@media (max-width: 768px) {
+    /* Ocultar menú y mostrar toggle */
+    header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 10px 20px;
+    }
+
+    .logo {
+        font-size: 18px;
+        font-weight: bold;
+        text-align: left;
+        flex: 1;
+    }
+
+    .menu-toggle {
+        display: flex;
+        cursor: pointer;
+        padding: 10px;
+    }
+
+
+    nav ul {
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        top: 60px;
+        right: 10px;
+        background-color: orange;
+        width: 200px;
+        border-radius: 5px;
+        text-align: center;
+        padding: 10px;
+        opacity: 0;
+        transform: translateY(-10px);
+        transition: opacity 0.3s ease, transform 0.3s ease, right 0.3s ease-in-out;
+    }
+
+    nav ul.active {
+        display: flex;
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+    .menu-toggle {
+        display: flex;
+        position: relative;
+        z-index: 1000;
+    }
+
+    /* Grid adaptable */
+    .projects-container {
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        padding: 20px;
+        gap: 30px;
+    }
+}

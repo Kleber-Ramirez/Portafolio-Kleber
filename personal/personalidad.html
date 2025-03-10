@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test de Personalidad</title>
+    <link rel="stylesheet" href="personalidad.css">
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="index.html">Inicio</a></li>
+            <li><a href="decisioness.html">Libro de Decisiones</a></li>
+            <li><a href="calculadora.html">Compatibilidad</a></li>
+            <li><a href="personalidad.html">Tes de Personalidad</a></li>
+            <li><a href="actividades.html">actividades</a></li>
+        </ul>
+    </nav>
+    <div class="content">
+        <h1>Test de Personalidad</h1>
+        <form id="testForm">
+            <div class="question-group" id="questions1">
+                <div class="question">
+                    <label>1. Prefieres pasar el tiempo en una gran multitud:</label>
+                    <input type="radio" name="q1" value="E"> Sí
+                    <input type="radio" name="q1" value="I"> No
+                </div>
+                <div class="question">
+                    <label>2. Te consideras una persona más práctica que teórica:</label>
+                    <input type="radio" name="q2" value="S"> Sí
+                    <input type="radio" name="q2" value="N"> No
+                </div>
+                <div class="question">
+                    <label>3. Sueles tomar decisiones basadas más en la lógica que en las emociones:</label>
+                    <input type="radio" name="q3" value="T"> Sí
+                    <input type="radio" name="q3" value="F"> No
+                </div>
+                <div class="question">
+                    <label>4. Prefieres planificar las cosas con anticipación:</label>
+                    <input type="radio" name="q4" value="J"> Sí
+                    <input type="radio" name="q4" value="P"> No
+                </div>
+                <div class="question">
+                    <label>5. Te resulta fácil hacer nuevas amistades:</label>
+                    <input type="radio" name="q5" value="E"> Sí
+                    <input type="radio" name="q5" value="I"> No
+                </div>
+                <button type="button" onclick="showNext()">Siguiente</button>
+            </div>
+            <div class="question-group" id="questions2" style="display:none;">
+                <div class="question">
+                    <label>6. Prefieres trabajar en proyectos que tienen un impacto inmediato:</label>
+                    <input type="radio" name="q6" value="S"> Sí
+                    <input type="radio" name="q6" value="N"> No
+                </div>
+                <div class="question">
+                    <label>7. Sueles ser reservado en situaciones sociales:</label>
+                    <input type="radio" name="q7" value="I"> Sí
+                    <input type="radio" name="q7" value="E"> No
+                </div>
+                <div class="question">
+                    <label>8. Te gusta planificar tus actividades con antelación:</label>
+                    <input type="radio" name="q8" value="J"> Sí
+                    <input type="radio" name="q8" value="P"> No
+                </div>
+                <div class="question">
+                    <label>9. Prefieres seguir una estructura estable en el trabajo:</label>
+                    <input type="radio" name="q9" value="J"> Sí
+                    <input type="radio" name="q9" value="P"> No
+                </div>
+                <div class="question">
+                    <label>10. Tiendes a confiar en tus intuiciones:</label>
+                    <input type="radio" name="q10" value="N"> Sí
+                    <input type="radio" name="q10" value="S"> No
+                </div>
+                <button type="button" onclick="showPrevious()">Anterior</button>
+                <button type="button" onclick="calculatePersonality()">Enviar</button>
+            </div>
+        </form>
+        <div id="result"></div>
+    </div>
+    <script src="personalidad.js"></script>
+</body>
+</html>

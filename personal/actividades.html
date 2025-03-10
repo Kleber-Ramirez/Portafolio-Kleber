@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sugerencias de Actividades</title>
+    <link rel="stylesheet" href="actividades.css">
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="index.html">Inicio</a></li>
+            <li><a href="decisioness.html">Consejos</a></li>
+            <li><a href="calculadora.html">Compatibilidad</a></li>
+            <li><a href="personalidad.html">Tes de Personalidad</a></li>
+            <li><a href="actividades.html">actividades</a></li>
+        </ul>
+    </nav>
+    <div class="content">
+        <h1>Sugerencias de Actividades</h1>
+        <form id="moodForm">
+            <div class="question">
+                <label>¿Cómo te sientes hoy?</label>
+                <select id="moodSelect">
+                    <option value="">Selecciona tu estado de ánimo</option>
+                    <option value="feliz">Feliz</option>
+                    <option value="triste">Triste</option>
+                    <option value="estresado">Estresado</option>
+                    <option value="aburrido">Aburrido</option>
+                    <option value="emocionado">Emocionado</option>
+                </select>
+            </div>
+            <button type="button" onclick="suggestActivities()">Ver Sugerencias</button>
+        </form>
+        <div id="suggestions"></div>
+    </div>
+    <script src="actividades.js"></script>
+</body>
+</html>

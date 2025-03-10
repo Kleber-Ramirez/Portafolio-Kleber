@@ -8,11 +8,16 @@
 </head>
 <body>
     <header>
-        <h4>Kleber Ramirez / Portafolio</h4>
+        <div class="logo">Portafolio/Kleber Ramirez</div>
+        <div class="menu-toggle">
+            <div></div>
+            <div></div>
+            <div></div>                      
+        </div>
         <nav>
-            <ul>
-                <li><a href="inicio.html">Inicio</a></li>
-                <li><a href="proyectos.html">Proyectos</a></li>
+            <ul id="menu">
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="proyectos.html">proyectos</a></li>
                 <li><a href="contacto.html">Contacto</a></li>
                 <li><a href="sobre-mi.html">Sobre mí</a></li>
             </ul>
@@ -24,7 +29,7 @@
             <h1><span>¿Tienes un proyecto?</span><br> Escríbeme y te responderé pronto.</h1><br><br>
             <p><strong>kleberramirez07@gmail.com</strong></p>
             <p><strong>933 726 837</strong></p>
-            <p><strong>Kleber-Ramirez</strong></p>
+            <p><strong>Kleber-Ramirez</strong></p><br>
             <div class="redes">
                 <a href="https://github.com/Kleber-Ramirez"><img src="redes/github logo.png" alt="Instagram"></a>
                 <a href="#"><img src="redes/linkdlin logo.png" alt="YouTube"></a>
@@ -34,15 +39,32 @@
         </div>
 
         <div class="formulario">
-            <form>
-                <input type="text" placeholder="Nombres:" required>
-                <input type="text" placeholder="Apellidos:" required>
-                <input type="email" placeholder="Email:" required>
-                <input type="tel" placeholder="Celular:" required>
-                <textarea placeholder="Asunto:" required></textarea>
+            <form action="https://formspree.io/f/mdkenbbe" method="POST">
+                <label>
+                    Tu nombre:
+                    <input type="text" name="name" placeholder="Nombres:" required>
+                </label>
+                <label>
+                    Tu apellido:
+                    <input type="text" name="lastname" placeholder="Apellidos:" required>
+                </label>
+                <label>
+                    Tu email:
+                    <input type="email" name="email" placeholder="Email:" required>
+                </label>
+                <label>
+                    Tu celular:
+                    <input type="number" name="phone" placeholder="Celular:" required>
+                </label>
+                <label>
+                    Tu mensaje:
+                    <textarea name="message" placeholder="Asunto:" required></textarea>
+                </label>
                 <button type="submit">Enviar</button>
             </form>
         </div>
-    </section>
+        
+
+    <script src="script.js"></script>
 </body>
 </html>
